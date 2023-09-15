@@ -1,0 +1,14 @@
+version: 0.0.1
+name: aptos-vulnerable-locker
+type: wasm
+subscribable: false
+description: Tracks locked tokens claimed
+logoUrl: https://mamoru.ai/default-agent-logo.png
+chains: [APTOS_TESTNET]
+tags: [mamoru,agent]
+parameters:
+  - key: txModule
+    title: Tx module to track
+    type: STRING
+    description: Threshold amount
+    defaultValue: "0xb5d81192ebe4e6201673301ea8018549fcda2ff4c1dd5c60d76041d0ddecf0bf::locked_coins"
