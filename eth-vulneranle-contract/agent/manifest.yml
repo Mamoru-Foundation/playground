@@ -1,0 +1,19 @@
+version: 0.0.1
+name: eth-vulnerable-counter
+type: wasm
+subscribable: false
+description: Mamoru Agent
+logoUrl: https://mamoru.ai/default-agent-logo.png
+chains: [SUI_TESTNET]
+tags: [mamoru,agent,eth,wasm,vulnerable]
+parameters:
+  - key: contractAddress
+    title: Contract Address
+    type: STRING
+    description: Contract address to track
+    defaultValue: "0xb7B5fD1eeBb5A609E67146fF8B015aD79be08F03"
+  - key: contractOwner
+    title: Contract Owner
+    type: STRING
+    description: Contract owner address
+    defaultValue: "0x3aF3498E1558B750E2A4214243F65f2D9cd05e29"
