@@ -1,23 +1,29 @@
 import {EvmCtx} from "@mamoru-ai/mamoru-evm-sdk-as/assembly"
 import {IncidentSeverity, parameter, report} from "@mamoru-ai/mamoru-sdk-as/assembly"
+import {bytesToHex} from "@mamoru-ai/mamoru-sdk-as/assembly/util"
 
 export function main(): void {
     const ctx = EvmCtx.load();
     const contractAddress = parameter("contractAddress").asString()
     const contractOwner = parameter("contractOwner").asString()
+    const methodCounterDecreased = parameter("methodCounterDecreased").asString()
+    const methodCounterIncreased = parameter("methodCounterIncreased").asString()
 
-    for (let i = 0; i < ctx.txs.length; i++) {
-        const tx = ctx.txs[i];
+    for (let i = 0; i < ctx.events.length; i++) {
+        const event = ctx.events[i];
 
-        if (tx.to != contractAddress) {
+        if (event.address != contractAddress) {
             continue;
         }
 
+        const tx = ctx.txs[event.txIndex]
         const senderAddress = tx.from;
-        if (contractOwner != senderAddress) {
-            return report(tx.txHash, IncidentSeverity.Alert, `Unexpected: The owner of the contract is not call contract functions`, null, senderAddress);
+        if (bytesToHex(event.topic0) == methodCounterDecreased || bytesToHex(event.topic0) == methodCounterIncreased) {
+            if (senderAddress != contractOwner) {
+                return report(tx.txHash, IncidentSeverity.Alert, `Unexpected: the function is not called by the owner`, null, senderAddress);
+            }
         }
 
-        return report(tx.txHash, IncidentSeverity.Info, `Expected: The owner of the contract is call contract functions`, null, senderAddress);
+        return report(tx.txHash, IncidentSeverity.Info, `Expected: the function is called by the owner`, null, senderAddress);
     }
 }

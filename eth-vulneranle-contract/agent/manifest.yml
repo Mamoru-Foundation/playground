@@ -4,7 +4,7 @@ type: wasm
 subscribable: false
 description: Mamoru Agent
 logoUrl: https://mamoru.ai/default-agent-logo.png
-chains: [SUI_TESTNET]
+chains: [ETH_TESTNET]
 tags: [mamoru,agent,eth,wasm,vulnerable]
 parameters:
   - key: contractAddress
@@ -17,3 +17,13 @@ parameters:
     type: STRING
     description: Contract owner address
     defaultValue: "0x3aF3498E1558B750E2A4214243F65f2D9cd05e29"
+  - key: methodCounterDecreased
+    title: Method Counter Decreased
+    type: STRING
+    description: Hash of the method CounterDecreased
+    defaultValue: "0x8e2dc3acdc9ccc998b84155103ad06fdc57733681108c79c1a98d628e5b27e48"
+  - key: methodCounterIncreased
+    title: Method Counter Increased
+    type: STRING
+    description: Hash of the method CounterIncreased
+    defaultValue: "0x9389e4e5d18f626febd3fd1c8a0fc1a63c8ff20d46c4cca7221a57aa790edaaa"
