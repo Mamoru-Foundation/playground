@@ -6,8 +6,8 @@ export function main(): void {
     const ctx = EvmCtx.load();
     const contractAddress = parameter("contractAddress").asString()
     const contractOwner = parameter("contractOwner").asString()
-    const methodCounterDecreased = parameter("methodCounterDecreased").asString()
-    const methodCounterIncreased = parameter("methodCounterIncreased").asString()
+    const methodCounterDecreased = parameter("methodCountDecrease").asString()
+    const methodCounterIncreased = parameter("methodCountIncrease").asString()
 
     for (let i = 0; i < ctx.events.length; i++) {
         const event = ctx.events[i];
@@ -22,8 +22,8 @@ export function main(): void {
             if (senderAddress != contractOwner) {
                 return report(tx.txHash, IncidentSeverity.Alert, `Unexpected: the function is not called by the owner`, null, senderAddress);
             }
-        }
 
-        return report(tx.txHash, IncidentSeverity.Info, `Expected: the function is called by the owner`, null, senderAddress);
+            return report(tx.txHash, IncidentSeverity.Info, `Expected: the function is called by the owner`, null, senderAddress);
+        }
     }
 }

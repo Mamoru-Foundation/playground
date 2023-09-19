@@ -1,5 +1,5 @@
 version: 0.0.1
-name: eth-vulnerable-counter
+name: eth-test-v-counter
 type: wasm
 subscribable: false
 description: Mamoru Agent
@@ -17,12 +17,12 @@ parameters:
     type: STRING
     description: Contract owner address
     defaultValue: "0x3aF3498E1558B750E2A4214243F65f2D9cd05e29"
-  - key: methodCounterDecreased
+  - key: methodCountDecrease
     title: Method Counter Decreased
     type: STRING
     description: Hash of the method CounterDecreased
     defaultValue: "0x8e2dc3acdc9ccc998b84155103ad06fdc57733681108c79c1a98d628e5b27e48"
-  - key: methodCounterIncreased
+  - key: methodCountIncrease
     title: Method Counter Increased
     type: STRING
     description: Hash of the method CounterIncreased
