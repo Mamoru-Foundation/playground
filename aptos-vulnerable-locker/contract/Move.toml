@@ -1,0 +1,13 @@
+[package]
+name = 'Vulnerable Locker'
+version = '1.0.0'
+
+
+[addresses]
+locker = "0xb5d81192ebe4e6201673301ea8018549fcda2ff4c1dd5c60d76041d0ddecf0bf"
+
+[dependencies.AptosFramework]
+git = 'https://github.com/aptos-labs/aptos-core.git'
+rev = 'main'
+subdir = 'aptos-move/framework/aptos-framework'
+
