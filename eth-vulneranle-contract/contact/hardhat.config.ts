@@ -73,6 +73,18 @@ const config: HardhatUserConfig = {
             chainId: 1,
             gasPrice: 20000000000,
             accounts: [PRIVATE_KEY]
+        },
+        bsc_testnet: {
+            url: "https://data-seed-prebsc-1-s1.bnbchain.org:8545",
+            chainId: 97,
+            gasPrice: 20000000000,
+            accounts: [PRIVATE_KEY]
+        },
+        bsc_mainnet: {
+            url: "https://bsc-dataseed.bnbchain.org/",
+            chainId: 56,
+            gasPrice: 20000000000,
+            accounts: [PRIVATE_KEY]
         }
     },
     etherscan: {
@@ -81,41 +93,3 @@ const config: HardhatUserConfig = {
 };
 
 export default config;
-
-/*
-module.exports = {
-  defaultNetwork: "hardhat",
-  networks: {
-    sepolia: {
-      url: process.env.SEPOLIA_RPC_URL,
-      accounts: [process.env.PRIVATE_KEY],
-      chainId: 11155111,
-      blockConfirmations: 6,
-    },
-  },
-  solidity: {
-    compilers: [
-      {
-        version: "0.8.19",
-      },
-      {
-        version: "0.6.6",
-      },
-    ],
-  },
-
-    networks: {
-    sepolia: {
-      url: `https://sepolia.infura.io/v3/${INFURA_API_KEY}`,
-      accounts: [SEPOLIA_PRIVATE_KEY]
-    },
-      etherscan: {
-        // Your API key for Etherscan
-        // Obtain one at https://etherscan.io/
-        apiKey: "YOUR_ETHERSCAN_API_KEY"
-      }
-  }
-};
-
-https://github.com/Atharv-02/hardhat-fundme-fcc-test/blob/master/hardhat.config.js
- */

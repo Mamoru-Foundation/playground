@@ -1,7 +1,10 @@
 import {ethers} from "hardhat";
 
 async function main () {
+    // ETH
     const contractAddress = "0xb7B5fD1eeBb5A609E67146fF8B015aD79be08F03";
+    // BCS testnet
+    //const contractAddress = "0x0F0F0a53F15eE3Ad5bf981CC9396603c3D2f0f32";
     const [deployer] = await ethers.getSigners();
 
     // Load the Counter contract

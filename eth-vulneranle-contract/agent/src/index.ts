@@ -13,10 +13,10 @@ export function main(): void {
             continue;
         }
 
-        const senderAddress = tx.from;
+        const senderAddress = tx.from.toLowerCase();
         // Search for increaseCounter and decreaseCounter functions
-        const methodIncrease = trace.input.parse("increaseCounter(uint256 amount)")
-        const methodDecrease = trace.input.parse("decreaseCounter(uint256 amount)")
+        const methodIncrease = trace.input.parse("increaseCounter(uint256)")
+        const methodDecrease = trace.input.parse("decreaseCounter(uint256)")
         // Check if the function is called
         if (methodIncrease != null || methodDecrease != null) {
             // Check if the function is called by the not owner
