@@ -1,8 +1,8 @@
 import {ethers} from "hardhat";
 
 async function main () {
-    // ETH
-    const contractAddress = "0xb7b5fd1eebb5a609e67146ff8b015ad79be08f03";
+    // BCS testnet
+    const contractAddress = "0x0F0F0a53F15eE3Ad5bf981CC9396603c3D2f0f32";
     const [deployer] = await ethers.getSigners();
 
     // Load the Counter contract
@@ -15,9 +15,8 @@ async function main () {
 
     // Call the getCounter function to retrieve the current count
     const response = await counter.decreaseCounter(1);
-    const receipt = await response.wait();
-    console.log(`Transaction hash: ${receipt?.transactionHash}`);
-   // console.log(`EventLog: `, receipt?.logs[0]);
+    await response.wait();
+
     console.log(`Current count: ${await counter.getCounter()}`);
 }
 
