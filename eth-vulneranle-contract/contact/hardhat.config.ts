@@ -85,6 +85,10 @@ const config: HardhatUserConfig = {
             chainId: 56,
             gasPrice: 20000000000,
             accounts: [PRIVATE_KEY]
+        },
+        bor_testnet: {
+            url: "https://rpc-mumbai.maticvigil.com",
+            accounts: [PRIVATE_KEY]
         }
     },
     etherscan: {

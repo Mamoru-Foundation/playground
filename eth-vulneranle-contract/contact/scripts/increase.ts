@@ -2,7 +2,7 @@ import {ethers} from "hardhat";
 
 async function main () {
     // Sepolia
-    const contractAddress = "0xb7b5fd1eebb5a609e67146ff8b015ad79be08f03";
+    const contractAddress = (process.env.CONTRACT_ADDRESS as string) ??  "0xb7b5fd1eebb5a609e67146ff8b015ad79be08f03";
     const [deployer] = await ethers.getSigners();
 
     // Load the Counter contract

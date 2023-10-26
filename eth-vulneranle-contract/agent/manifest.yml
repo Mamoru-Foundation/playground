@@ -1,17 +1,17 @@
 version: 0.0.1
-name: eth-test-v-counter-demo
+name: evm-vulnerable-counter-demo
 type: wasm
 subscribable: false
 description: Mamoru Agent
 logoUrl: https://mamoru.ai/default-agent-logo.png
-chains: [ETH_TESTNET]
+chains: [BSC_TESTNET, ETH_TESTNET, BOR_TESTNET]
 tags: [mamoru,agent,eth,wasm,vulnerable]
 parameters:
   - key: contractAddress
     title: Contract Address
     type: STRING
     description: Contract address to track
-    defaultValue: "0xb7b5fd1eebb5a609e67146ff8b015ad79be08f03"
+    defaultValue: "0x0F0F0a53F15eE3Ad5bf981CC9396603c3D2f0f32"
   - key: contractOwner
     title: Contract Owner
     type: STRING

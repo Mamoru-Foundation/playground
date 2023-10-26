@@ -21,7 +21,7 @@ export function main(): void {
         if (methodIncrease != null || methodDecrease != null) {
             // Check if the function is called by the not owner
             if (senderAddress != contractOwner) {
-                return report(tx.txHash, IncidentSeverity.Alert, `Unexpected: the function is not called by the owner`, null, senderAddress);
+                return report(tx.txHash, IncidentSeverity.Alert, `The function was called by a non-owner`, null, senderAddress);
             }
 
             return report(tx.txHash, IncidentSeverity.Info, `Expected: the function is called by the owner`, null, senderAddress);
