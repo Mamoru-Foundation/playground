@@ -1,0 +1,35 @@
+name:  "set-value-zero"
+description: "Sets counter value to 0 and notifies the team"
+on:
+  - daemonId: "0x8769bebbcd7639ce95c2ad46bd5c958a556bdd055d5de071c6a5b0b4b0d84ed2"
+    levels: [SEVERITY_ALERT]
+tasks:
+  parallel:
+    run:
+      - single:
+          name: Set value to 0
+          run: sui-send-tx@1
+          params:
+            - name: network
+              value: testnet
+            - name: contract
+              value: 0x9c0b30d6717142694a6de87249e9b92c58d2018d750f8abd7d7b16a067bfca5b::counter::set_value
+            - name: max_gas
+              value: 10000000
+            - name: ty_args
+              value: |
+                []
+            - name: args
+              value: |
+                [
+                  "address:0xc7dcfe7b9be4efb80ff567dbf212694ba1462693a58c19f5e41958b03cf9aee5",
+                  "u64:0"
+                ]
+      - single:
+          name: Notify in Slack
+          run: notification@1
+          params:
+            - name: channel
+              value: mamoru-slack-webhook
+            - name: message
+              value: "Unexpected \"set_value\" access"

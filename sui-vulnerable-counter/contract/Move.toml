@@ -6,4 +6,4 @@ version = "0.0.1"
 Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/testnet" }
 
 [addresses]
-vulnerable_counter = "0x4958a3a96e91380a443d116b84c07b48dba90bce664d9f060f94a8f26f537e62"
+vulnerable_counter = "0x9c0b30d6717142694a6de87249e9b92c58d2018d750f8abd7d7b16a067bfca5b"

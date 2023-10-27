@@ -1,5 +1,5 @@
 version: 0.0.1
-name: sui-vulnerable-counter
+name: sui-vulnerable-counter-v2
 type: wasm
 subscribable: false
 description: Mamoru Agent
@@ -11,4 +11,4 @@ parameters:
     title: Tx module to track
     type: STRING
     description: Threshold amount
-    defaultValue: "0x4958a3a96e91380a443d116b84c07b48dba90bce664d9f060f94a8f26f537e62::counter"
+    defaultValue: "0x9c0b30d6717142694a6de87249e9b92c58d2018d750f8abd7d7b16a067bfca5b::counter"
