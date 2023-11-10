@@ -1,0 +1,14 @@
+version: 0.0.1
+name: new-package-tracker
+type: wasm
+subscribable: false
+description: Mamoru Agent
+logoUrl: https://cryptologos.cc/logos/sui-sui-logo.png
+chains: [SUI_TESTNET,SUI_MAINNET]
+tags: [mamoru,agent]
+parameters:
+  - key: warnThreshold
+    title: Warn Threshold
+    type: NUMBER
+    description: The dependency amount threshold to warn
+    defaultValue: "0"
