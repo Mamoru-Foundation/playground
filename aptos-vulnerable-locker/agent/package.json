@@ -8,8 +8,8 @@
     "build": "asc src/index.ts --exportRuntime --outFile build/index.wasm -b build/index.wat --sourceMap --optimize --exportRuntime --runtime stub --lib"
   },
   "dependencies": {
-    "@mamoru-ai/mamoru-sdk-as": "^0.7.0",
-    "@mamoru-ai/mamoru-aptos-sdk-as": "^0.3.1"
+    "@mamoru-ai/mamoru-sdk-as": "^0.8.0",
+    "@mamoru-ai/mamoru-aptos-sdk-as": "^0.3.3"
   },
   "devDependencies": {
     "assemblyscript": "^0.27.1"
